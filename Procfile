@@ -1,0 +1,1 @@
+web: gunicorn --bind :8000 django_app.wsgi:application
