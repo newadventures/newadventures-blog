@@ -1,0 +1,7 @@
+Django
+gunicorn
+python-dotenv
+psycopg[binary,pool]
+whitenoise
+dj-database-url
+django-debug-toolbar

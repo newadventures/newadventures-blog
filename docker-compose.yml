@@ -1,0 +1,51 @@
+name: newadventures
+services:
+  db:
+    image: 'postgres'
+    container_name: "newadventures-pg"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+       - '5432:5432'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 2s
+      timeout: 2s
+      retries: 10
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+  web:
+    container_name: "newadventures-web"
+    image: newadventures
+    pull_policy: never
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    ports:
+      - "80:8000"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python manage.py migrate
+        python manage.py createsuperuser --no-input --username mail@newadventures.dev --email mail@newadventures.dev
+        python manage.py runserver 0.0.0.0:8000
+  shell:
+    container_name: "newadventures-shell"
+    image: newadventures
+    pull_policy: never
+    depends_on:
+      db:
+        condition: service_healthy
+    build:
+      context: .
+    tty: true
+    volumes:
+      - .:/app
+volumes:
+  postgres_data:
