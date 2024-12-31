@@ -5,4 +5,3 @@ psycopg[binary,pool]
 whitenoise
 dj-database-url
 django-debug-toolbar
-gunicorn
