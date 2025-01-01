@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all">
-    <meta name="description" content="New Adventures In Coding. Mostly s Django blog.">
+    <meta name="description"
+          content="{% if page_description %}{{ page_description }}{% else %}New Adventures In Coding. Mostly a Django blog.{% endif %}">
     <link rel="shortcut icon" href="{% static "blog/favicon.ico" %}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

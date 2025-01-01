@@ -22,3 +22,8 @@ class ArticleDetailView(ContextDataMixin, DetailView):
     def get_page_name(self, request):
         if self.object is not None:
             return self.object.title
+
+    @context_data(key="page_description")
+    def get_page_description(self, request):
+        if self.object is not None:
+            return self.object.meta_description

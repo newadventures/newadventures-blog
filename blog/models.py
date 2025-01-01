@@ -7,6 +7,7 @@ import markdown
 from django.db import models
 from django.db.models import signals
 from django.urls import reverse
+from django.utils.html import strip_tags
 
 
 class Tag(models.Model):
@@ -57,5 +58,8 @@ class Article(models.Model):
         self.html_tldr = markdown.markdown(self.tldr)
 
 
+    @property
+    def meta_description(self) -> str:
+        return strip_tags(self.html_tldr)
 
 signals.pre_save.connect(receiver=Article.pre_save, sender=Article)
