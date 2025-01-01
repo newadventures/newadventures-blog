@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-tw": "npx tailwindcss -i ./blog/src/input.css -o ./blog/static/blog/css/site.css"
+    "build-tw": "npx tailwindcss -i ./blog/src/input.css -o ./blog/static/blog/css/site.css --minify"
   },
   "keywords": [],
   "author": "",
