@@ -576,10 +576,11 @@ pre {
 a {
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity, 1));
+  text-decoration-line: underline;
 }
 
 a:hover {
-  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 ul {
