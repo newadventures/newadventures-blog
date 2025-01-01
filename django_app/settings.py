@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "whitenoise.runserver_nostatic",
     "debug_toolbar",
+    "blog",
 ]
 
 MIDDLEWARE = [
@@ -175,3 +177,6 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TOOLBAR_CALLBACK": show_toolbar,
 }
+
+ADMIN_PATH = os.getenv("ADMIN_PATH", "adm")
+SITE_ID = 1

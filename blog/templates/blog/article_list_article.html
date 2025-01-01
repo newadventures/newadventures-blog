@@ -1,0 +1,9 @@
+<article class="bg-gray-50 p-4 rounded mb-4">
+    {% include "blog/article_header.html" %}
+    <div class="my-2">
+        {{ article.html_tldr|safe }}
+    </div>
+    <div class="mt-4">
+        <a class="hover:text-blue-500" href="{{ article.get_absolute_url }}">Read full article</a>
+    </div>
+</article>

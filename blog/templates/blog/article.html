@@ -1,0 +1,8 @@
+<article>
+    <div class="bg-gray-50 p-4 rounded mb-4">
+        {% include "blog/article_header.html" %}
+    </div>
+    <div class="bg-gray-50 p-4 rounded mb-4">
+        {{ article.html_content|safe }}
+    </div>
+</article>

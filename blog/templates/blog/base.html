@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all">
+    <meta name="description" content="New Adventures In Coding. Mostly s Django blog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static "blog/css/site.css" %}">
+    <script src="https://kit.fontawesome.com/c21c329352.js" crossorigin="anonymous"></script>
+    <title>New Adventures{% if page_title %} -> {{ page_title }}{% else %} In Coding.{% endif %}</title>
+</head>
+<body>
+<div class="container mx-auto p-6 max-w-6xl">
+    <header class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900">
+            <a href="/">New Adventures In Coding.</a>
+        </h1>
+    </header>
+    <main class="py-6">
+        {% block main_content %}{% endblock %}
+    </main>
+</div>
+</body>

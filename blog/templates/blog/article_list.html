@@ -1,0 +1,8 @@
+{% extends "blog/base.html" %}
+
+{% block main_content %}
+    {% for article in articles %}
+        {% include "blog/article_list_article.html" %}
+    {% endfor %}
+{% endblock main_content %}
+

@@ -1,0 +1,7 @@
+<h2 class="text-2xl font-bold tracking-tight text-gray-900 my-1 hover:text-blue-500">
+    <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+</h2>
+<div class="my-2">
+    <i class="fa-sharp fa-calendar-days" aria-hidden="true"></i>
+    <time datetime="{{ article.published|date:"Y-m-d" }}">{{ article.published|date }}</time>
+</div>

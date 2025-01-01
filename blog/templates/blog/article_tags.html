@@ -1,0 +1,11 @@
+{% if article.tags %}
+    <div class="my-2">
+        <i class="fa-sharp fa-tag" aria-hidden="true"></i>
+        {% for tag in article.tags.all %}
+            <a href="#">{{ tag.name }}</a>
+            {% if not forloop.last %}
+                |
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
